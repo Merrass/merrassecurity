@@ -1,0 +1,197 @@
+body {
+    background-color: #272229;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navMenu {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.navMenu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    margin: 0 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+    color: #fc3677;
+}
+
+.navMenu .dot {
+    width: 6px;
+    background: #fc3677;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover ~ .dot { transform: translateX(30px); opacity: 1; }
+.navMenu a:nth-child(2):hover ~ .dot { transform: translateX(110px); opacity: 1; }
+.navMenu a:nth-child(3):hover ~ .dot { transform: translateX(200px); opacity: 1; }
+.navMenu a:nth-child(4):hover ~ .dot { transform: translateX(285px); opacity: 1; }
+
+#box {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#rightbar {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    background: #19b86900;
+}
+
+h1, h2, p {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+.derecha { margin-left: 15%; }
+.derecha2 { margin-left: 0%; }
+
+.column1 {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    margin-top: 3%;
+}
+.column2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    margin-top: 3%;
+}
+
+.logo-container {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #c9b3ba;
+}
+
+.trans--grow { transition: width 1s ease-out; width : 0%; }
+.grow { width:45%; }
+.hr1 { margin-left:0; }
+.hr2 { margin-right:10; transform-origin: right; }
+
+hr {
+    margin-top: 20px;
+    padding: 0.5px 0;
+    border: none;
+    background-color: #fc3677;
+    letter-spacing: 5px;
+}
+
+p.a {
+    font-family: 'Simple Brush Script', sans-serif;
+    font-size: larger;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    color: #c9b3ba;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-icons i {
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover i {
+    color: #fc3677;
+}
+
+.blog-preview {
+    border: 1px solid #fc3677;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+.blog-preview:hover { background-color: #fc367885; border: 1px solid #ffffff; }
+.blog-preview img { max-width: 100%; height: auto; border-radius: 8px; }
+.blog-preview h2, .blog-preview p { margin: 8px 0; }
+
+.medio { text-align: center; }
+
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+
+.hidden { opacity:0; }
+
+.console-container {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:2em;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #f39cb8; }
+::-webkit-scrollbar-thumb:hover { background: #fc3677; }
+
+/* 🔹 MEDIA QUERIES para móviles */
+@media (max-width: 768px) {
+    .navMenu {
+        position: static;
+        transform: none;
+        margin: 20px 0;
+    }
+    .navMenu a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1em;
+    }
+    .column1, .column2 {
+        width: 100%;
+        float: none;
+        margin-top: 10px;
+    }
+    #box, #rightbar {
+        width: 100%;
+        margin: 0;
+    }
+    .console-container {
+        font-size: 1.2em;
+    }
+}

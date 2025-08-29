@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/content.css">
+    <title>Merras Security</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/simple-brush-script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+    <nav class="navMenu">
+        <a href="../index.html">Home</a>
+        <a href="../HTML/inicio.html">Blog</a>
+        <a href="../HTML/about.html">About</a>
+        <div class="dot"></div>
+    </nav>
+    </header>
+    <div class="column1" id="column1">
+        <div class="derecha">
+            <div class="logo-container">
+            <img src="../imagenes/logo1-modified.png" alt="M.S. Security Logo" width="150px" height="150px">
+            </div>
+            <hr class="trans--grow hr1">
+            <br>
+            <p class="a" style="color: #c9b3ba;">Merras</p>
+            <br>
+            <p class="a" style="color: #c9b3ba;">CyberSecurity Student</p>
+            <br>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/merras_/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/Merrass" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ciro-pe%C3%B1alver-57383b288/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="column2" style="background-color:#dd151500;">
+        <hr id="filling-hr">
+        <div class="derecha2">
+        <br>
+        <br>
+            <div class="blog-preview" href="#">
+                <div class="medio">
+                    <h1>File Encryption Script with Python</h1>
+                </div>
+                <br>    
+                <br>
+                <p>⚠️Educational purposes only!!⚠️ </p>
+                <br>
+                <p>On this project i will show you how to create a script written in Python to encrypt files on Linux.</p>
+                <br>
+                <p>First of all i would like to explain whats an 'Encryption Script', An encryption script written in Python on a Unix-based system is a program that uses cryptographic 
+                    techniques to convert plaintext data into an unreadable format.
+                </p>
+                <br>
+                <img src="../imagenes/encryptionscript.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <br>
+
+                <p> Requirements needed:</p>
+                <br>
+                <p>
+                    - Unix-based OS (in my case it was made with Debian 12)
+                    <br>
+                    - Python + 3.0
+                    <br>
+                    - Fernet cryptographic key base64-encoded (i will explain later how to generate one with Python)
+                </p>
+                <br>
+                <br>
+                <p> Necessary Python Modules:</p>
+                <br>
+                <img src="../imagenes/modules.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                <br>
+                <p>
+                    - <strong>"os" module: </strong>Allows Python programs to interact with the operating system, providing functions for managing files, directories, and system processes.
+                    <br>
+                    <br>
+                    - <strong>"tkinter" module: </strong>Python's standard GUI toolkit for creating graphical user interfaces (GUIs). It provides widgets and methods to build windows, buttons, input fields, etc.
+                    <br>
+                    <br>
+                    - <strong>"tkinter.messagebox": </strong>A submodule of 'tkinter' for displaying standard dialogs and message boxes in GUI applications, such as alerts, warnings, errors, and confirmations.
+                    <br>
+                    <br>
+                    - <strong>"threading" module: </strong>Provides tools for working with threads in Python, enabling concurrent execution of tasks within a single process. Useful for handling multiple tasks simultaneously.
+                    <br>
+                    <br>
+                    - <strong>"cryptography.fernet" module: </strong>Part of the 'cryptography' library, offers symmetric encryption using the Fernet algorithm. Allows encrypting and decrypting data securely using a shared key.
+                    <br>
+                    <br>
+                    - <strong>"base64" module:</strong> The 'base64' module provides functions for encoding binary data to ASCII text using Base64 encoding and decoding Base64-encoded data back to binary.
+                </p>
+                <br>
+                <br>
+                <p>To begin with, i will explain how to create a "Fernet cryptographic key base64-encoded", First we will need a file created with 'touch' command and given execution 
+                    permissions with 'chmod', once we have this we will start to write our program to generate the key:</p>
+                <br>
+                <img src="../imagenes/fernetcontent.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                <br>
+                <img src="../imagenes/keycontent.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                <br>
+                <p>Then we will save the generated key for it's use later on.</p>
+                <br>
+                <p>Once we reached this point, we will start writting our main program, (I used customized names for methods etc...) first of all we will create the method 'ejecutar_codigo(self)':</p>
+                <br>
+                <img src="../imagenes/keys.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                <br>
+                <img src="../imagenes/ejecutarcodigo.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <br>
+                <p>
+                    Details:
+                    <br>
+                    <br>
+                    - <strong>static_key</strong> Our generated cryptographic key with fernet
+                    <br>
+                    <br>
+                    - <strong>encrypted_directory</strong> Path to our desired directory to encrypt, ⚠️If we use a path like '/etc/' we will need <strong>SUDO</strong> privileges.⚠️
+                    <br>
+                    <br>
+                    - <strong>codigo = self.codigo_entry.get(): </strong>Retrieves the decryption key entered by the user from some input field (codigo_entry).
+                    <br>
+                    <br>
+                    - <strong>if codigo:</strong> Checks if a decryption key (codigo) is provided.
+                    <br>
+                    <br>
+                    - <strong>self.codigo_ingresado = True:</strong> Sets a flag (codigo_ingresado) indicating that a decryption key has been entered.
+                    <br>
+                    <br>
+                    - <strong>threading.Thread(target=self.desencriptar_archivos, args=(encrypted_directory, codigo)).start():</strong> Starts a new thread to execute the desencriptar_archivos method, passing encrypted_directory (presumably the directory containing encrypted files) and the decryption key (codigo) as arguments. This allows decryption to occur concurrently with other operations in the application.
+                </p>
+                <br>
+                <br>
+                <p>Now we will create the method named 'encriptar_archivos(self, directory_path, key)':</p>
+                <img src="../imagenes/encriptararchivos.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <br>
+                <p>
+                    Details:
+                    <br>
+                    <br>
+                    - <strong>fernet = Fernet(static_key)</strong> Initializes a Fernet object with a static encryption key (static_key). This key should ideally be kept secure and not hard-coded in production code.
+                    <br>
+                    <br>
+                    - Iterates over each file <strong>(filename) </strong> in the specified directory <strong>(directory_path).</strong>
+                    <br>
+                    <br>
+                    - Checks if the item is a file <strong>(os.path.isfile(filepath)).</strong>  
+                    <br>
+                    <br>
+                    - Reads the contents of each file <strong>(data)</strong>, encrypts it using <strong>fernet.encrypt(data)   </strong>, and writes the encrypted data to a new file with a <strong>'.encrypted'</strong> suffix <strong>(filepath + '.encrypted').</strong>
+                    <br>
+                    <br>
+                    - Deletes the original unencrypted file <strong>(os.remove(filepath))</strong> after successful encryption.
+                    <br>
+                    <br>
+                    - Finally, removes any remaining files in the directory that are not <strong>.encrypted</strong> to ensure only encrypted files remain.
+                </p>
+                <br>
+                <br>
+                <p>Finally we will create the last method named 'desencriptar_archivos(self, directory_path, key)':</p>
+                <img src="../imagenes/desencriptararchivos.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <br>
+                <p>
+                    Details:
+                    <br>
+                    <br>
+                    - <strong>fernet = Fernet(key.encode())</strong> Initializes a Fernet object with the decryption key <strong>(key)</strong>, which is first encoded to bytes <strong>(key.encode()).</strong>
+                    <br>
+                    <br>
+                    - Uses <strong>os.walk(directory_path)</strong> to traverse through all files (filenames) in the directory (directory_path) and its subdirectories (dirpath and dirnames).
+                    <br>
+                    <br>
+                    - Checks if each file (filename) ends with <strong>.encrypted (filepath.endswith('.encrypted'))</strong>, indicating it is an encrypted file.
+                    <br>
+                    <br>
+                    - Reads the encrypted data from each file (encrypted_data), decrypts it using <strong>fernet.decrypt(encrypted_data)</strong>, and writes the decrypted data to a new file <strong>(filepath[:-10]</strong>, removing the <strong>'.encrypted'</strong> suffix).
+                    <br>
+                    <br>
+                    - Deletes the original encrypted file <strong>(os.remove(filepath))</strong> after successful decryption.
+                    <br>
+                    <br>
+                    - Closes the GUI window or application <strong>(self.destroy()) </strong> after completing the decryption process.
+                    <br>
+                    <br>
+                    - Displays an error message if an invalid decryption key (ValueError) is provided using <strong>messagebox.showerror().</strong>
+                </p>
+                <br>
+                <p>
+                    To add some personalisation to the script we can add a custom module like i did in this example, i just simpply added a few phrases to make it look cool and an ascii art image:
+                </p>
+                <br>
+                <img src="../imagenes/PERSON1.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <img src="../imagenes/PERSON2.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <br>
+                <p>Now we finished the Script lets going to test it, first of all we are going to create a file with something in it like inside of the <strong>desired encrypted directory</strong> like i did here: </p>
+                <br>
+                <img src="../imagenes/hellotxt.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 60%;">
+                <br>
+                <p>Now we are going to execute the script with <strong>Python 3</strong>, remember to add execution permissions to the script:</p>
+                <br>
+                <img src="../imagenes/execute.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 60%;">
+                <br>
+                <p>Once we executed the script and we try to decrypt it with a wrong key we will see the next message:</p>
+                <img src="../imagenes/decrypt.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <br>
+                <p>If we don't decrypt the file, everything would be encrypted and we would be unable to read it:</p>
+                <br>
+                <img src="../imagenes/encrypted.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <br>
+                <p>If we decrypt it with the correct key the script will close itself and the files would be restored:</p>
+                <br>
+                <img src="../imagenes/decrypted.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 60%;">
+                <br>
+                <br>
+                <p>This was all! I hope you liked my script! you can get the code here: <a href="../HTML/encryption_code.html">Code here</a></p>
+                
+
+            </div>
+            <p></p>
+        </div>
+    </div>
+    <script>
+    const hrElement = document.getElementById("filling-hr");
+    function fillHr() {
+        let currentWidth = 0;
+        const intervalId = setInterval(() => {
+        currentWidth += 0.7;
+        hrElement.style.width = `${currentWidth}%`;
+        if (currentWidth >= 100) {
+            clearInterval(intervalId);
+        }
+        }, 10);
+    }
+    fillHr();
+
+    jQuery(document).ready(function($){
+            setTimeout(function(){
+                $('.trans--grow').addClass('grow');
+            }, 275);
+    });
+    $('.blog-preview').on('click', function() {
+                window.location.href = $(this).attr('href');
+    });
+    consoleText(['CyberSecurity', 'Bash Scripting', 'Ethical Hacking'], 'text', ['MediumVioletRed','Crimson','HotPink']);
+
+    function consoleText(words, id, colors) {
+    if (colors === undefined) colors = ['#fff'];
+    var visible = true;
+    var con = document.getElementById('console');
+    var letterCount = 1;
+    var x = 1;
+    var waiting = false;
+    var target = document.getElementById(id)
+    target.setAttribute('style', 'color:' + colors[0])
+    window.setInterval(function() {
+
+        if (letterCount === 0 && waiting === false) {
+        waiting = true;
+        target.innerHTML = words[0].substring(0, letterCount)
+        window.setTimeout(function() {
+            var usedColor = colors.shift();
+            colors.push(usedColor);
+            var usedWord = words.shift();
+            words.push(usedWord);
+            x = 1;
+            target.setAttribute('style', 'color:' + colors[0])
+            letterCount += x;
+            waiting = false;
+        }, 1000)
+        } else if (letterCount === words[0].length + 1 && waiting === false) {
+        waiting = true;
+        window.setTimeout(function() {
+            x = -1;
+            letterCount += x;
+            waiting = false;
+        }, 1000)
+        } else if (waiting === false) {
+        target.innerHTML = words[0].substring(0, letterCount)
+        letterCount += x;
+        }
+    }, 120)
+    window.setInterval(function() {
+        if (visible === true) {
+        con.className = 'console-underscore hidden'
+        visible = false;
+
+        } else {
+        con.className = 'console-underscore'
+
+        visible = true;
+        }
+    }, 400)
+    }
+    $(document).ready(function() {
+    var $column1 = $('#column1');
+    var offset = $column1.offset();
+    var topPadding = 80;
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > offset.top) {
+            $column1.stop().animate({
+                marginTop: $(window).scrollTop() - offset.top + topPadding
+            });
+        } else {
+            $column1.stop().animate({
+                marginTop: 0
+            });
+        }
+    });
+    });
+    </script>
+</body>
+</html>
+    

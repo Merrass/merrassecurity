@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/content.css">
+    <title>Merras Security</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/simple-brush-script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <div class="column2" style="background-color:#dd151500;">
+        <div class="derecha2">
+        <a href="../HTML/webserver.html">Go back</a>
+        <br>
+        <br>
+        <br>
+        <div class="code-container" style="color: aliceblue;">
+<pre><code>
+#include &lt;Wire.h&gt;
+#include &lt;Adafruit_GFX.h&gt;
+#include &lt;Adafruit_SSD1306.h&gt;
+#include &lt;WiFi.h&gt;
+#include &lt;ESPAsyncWebServer.h&gt;
+#include &lt;SPIFFS.h&gt;
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_ADDRESS 0x3C
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &amp;Wire, OLED_ADDRESS);
+
+AsyncWebServer server(80);
+
+const char* ssid = "Livebox6-6063";
+const char* password = "Ca402398D";
+const char* username = "notadmin";
+const char* userpassword = "notadmin12";
+
+void setup() {
+    Wire.begin();
+    display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDRESS);
+    display.setTextSize(0);
+    display.setTextColor(SSD1306_WHITE, SSD1306_BLACK);
+
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+
+    if(!SPIFFS.begin(true)){
+        Serial.println("An error occurred while mounting SPIFFS");
+        return;
+    }
+
+    server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
+        if (!request->authenticate(username, userpassword))
+            return request->requestAuthentication();
+        request->send(200, "text/html", getIndexHTML());
+    });
+
+    server.on("/test", HTTP_GET, [](AsyncWebServerRequest *request){
+        if (!request->authenticate(username, userpassword))
+            return request->requestAuthentication();
+
+        String testHTML = "&lt;!DOCTYPE html&gt;";
+        testHTML += "&lt;html lang=&quot;en&quot;&gt;";
+        testHTML += "&lt;head&gt;";
+        testHTML += "&lt;meta charset=&quot;UTF-8&quot;&gt;";
+        testHTML += "&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;";
+        testHTML += "&lt;title&gt;ESP32 Test Page&lt;/title&gt;";
+        testHTML += "&lt;style&gt;";
+        testHTML += "body { font-family: Arial, sans-serif; background-color: #f0f0f0; }";
+        testHTML += ".container { margin: 20px auto; width: 80%; text-align: center; }";
+        testHTML += ".btn { padding: 10px 20px; background-color: #007bff; color: #fff; border: none; cursor: pointer; border-radius: 5px; }";
+        testHTML += ".status { margin-top: 20px; font-size: 24px; }";
+        testHTML += "&lt;/style&gt;";
+        testHTML += "&lt;/head&gt;";
+        testHTML += "&lt;body&gt;";
+        testHTML += "&lt;div class=&quot;container&quot;&gt;";
+        testHTML += "&lt;h1&gt;ESP32 Cybersecurity page&lt;/h1&gt;";
+        testHTML += "&lt;/div&gt;";
+        testHTML += "&lt;/body&gt;";
+        testHTML += "&lt;/html&gt;";
+
+        request-&gt;send(200, "text/html", testHTML);
+    });
+
+    server.begin();
+}
+
+String getIndexHTML() {
+    String indexHTML = "&lt;!DOCTYPE html&gt;";
+    indexHTML += "&lt;html lang=&quot;en&quot;&gt;";
+    indexHTML += "&lt;head&gt;";
+    indexHTML += "&lt;meta charset=&quot;UTF-8&quot;&gt;";
+    indexHTML += "&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;";
+    indexHTML += "&lt;title&gt;ESP32 Web Interface&lt;/title&gt;";
+    indexHTML += "&lt;style&gt;";
+    indexHTML += "body { font-family: Arial, sans-serif; }";
+    indexHTML += ".container { margin: 20px auto; width: 80%; text-align: center; }";
+    indexHTML += ".btn { padding: 10px 20px; background-color: #007bff; color: #fff; border: none; cursor: pointer; border-radius: 5px; }";
+    indexHTML += ".bg-color { background-color: #ccff66; }";
+    indexHTML += "&lt;/style&gt;";
+    indexHTML += "&lt;/head&gt;";
+    indexHTML += "&lt;body class=&quot;bg-color&quot;&gt;";
+    indexHTML += "&lt;div class=&quot;container&quot;&gt;";
+    indexHTML += "&lt;h1&gt;ESP32 Web Interface&lt;/h1&gt;";
+    indexHTML += "&lt;p&gt;Cybersecurity blog!&lt;/p&gt;";
+    indexHTML += "&lt;/div&gt;";
+    indexHTML += "&lt;/body&gt;";
+    indexHTML += "&lt;/html&gt;";
+
+    return indexHTML;
+}
+
+void loop() {
+    display.clearDisplay();
+    display.setCursor(0, 0);
+    display.print("Web Server ON");
+    display.println("\n");
+    display.print("IP Address: ");
+    display.println("\n");
+    display.println(WiFi.localIP());
+    display.display();
+}
+</code></pre>
+</div>
+        </div>
+    </div>
+</body>
+</html>        

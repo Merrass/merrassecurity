@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/upcoming.css">
+    <title>Upcoming!</title>
+</head>
+<body>
+    <main>
+        <ul id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15" data-limit-y="50" class="scene">
+            <li class="layer" data-depth="0.40">
+                <div class="content">
+                    <h1 id="title">Project Launching Soon!</h1>
+                    <p>I'm currently working hard on this project. Stay Tuned!</p>
+                </div>
+            </li>
+            <li class="layer" data-depth="1.00">
+                <div class="footer"></div>
+            </li>
+            <li class="layer" data-depth="0.65">
+                <div class="cloud-back">
+                    <img src="https://res.cloudinary.com/jasonheecs/image/upload/v1480353347/construction/rocket_cloud_back.svg" alt="Site Launching Soon!" />
+                </div>
+            </li>
+            <li class="layer" data-depth="0.70">
+                <div class="rocket">
+                    <img src="https://res.cloudinary.com/jasonheecs/image/upload/v1480353347/construction/rocket.svg" alt="Site Launching Soon!" />
+                </div>
+            </li>
+            <li class="layer" data-depth="0.75">
+                <div class="cloud-front">
+                    <img src="https://res.cloudinary.com/jasonheecs/image/upload/v1480353347/construction/rocket_cloud_front.svg" alt="Site Launching Soon!" />
+                </div>
+            </li>
+        </ul>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            new Parallax(document.getElementById("scene"));
+        });
+    </script>
+</body>
+</html>

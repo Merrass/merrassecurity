@@ -1,0 +1,277 @@
+body {
+    background-color: #272229;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+* {
+margin: 0;
+padding: 0;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+
+.navMenu {
+position: absolute;
+top: 5%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+font-family: 'Montserrat', sans-serif;
+
+}
+
+.navMenu a {
+color: #ffffff;
+text-decoration: none;
+font-size: 1.2em;
+text-transform: uppercase;
+font-weight: 500;
+display: inline-block;
+width: 80px;
+-webkit-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+    color: #fc3677;
+}
+
+.navMenu .dot {
+    width: 6px;
+    background: #fc3677;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover ~ .dot {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover ~ .dot {
+    -webkit-transform: translateX(110px);
+    transform: translateX(110px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover ~ .dot {
+    -webkit-transform: translateX(200px);
+    transform: translateX(200px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.navMenu a:nth-child(4):hover ~ .dot {
+    -webkit-transform: translateX(285px);
+    transform: translateX(285px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+#box 
+{
+    width: 1000px;
+    height:100%;
+    margin-top: -5%;
+    margin-left: 28%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#rightbar {
+    width: 800px;
+    height: 560px;
+    margin: 0px;
+    padding: 0px;
+    background: #19b86900;
+    /*overflow: hidden*/
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+.derecha{
+    margin-left: 15%;
+}
+
+.derecha2{
+    margin-left: 0%;
+}
+
+.column1 {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    margin-top: 3%;
+    top: 20px;
+}
+.column2 {
+    float: left;
+    width:  50%;
+    padding: 10px;
+    margin-top: 3%;
+    /*overflow: hidden;*/
+}
+
+.logo-container {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: #c9b3ba;
+    border-width: 2px;
+}
+
+.trans--grow{
+    -webkit-transition: width 1s ease-out;
+    transition: width 1s  ease-out;
+    width : 0%;
+}
+.grow{
+    width:45%;
+}
+.hr1{
+    margin-left:0;
+}
+.hr2{
+    margin-right:10;
+    transform-origin: right;
+}
+
+hr {
+    margin-top: 20px;
+    padding: 0.5px 0;
+    border: none;
+    background-color: #fc3677;
+    letter-spacing: 5px;
+}
+
+p.a {
+    font-family: 'Simple Brush Script', sans-serif;
+    font-size: larger;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    color: #c9b3ba;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-icons i {
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover i {
+    color: #fc3677;
+}
+
+.blog-preview {
+    border: 1px solid #fc367800;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-preview h2 {
+    margin: 8px 0;
+}
+.blog-preview p {
+    margin: 8px 0;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+.medio {
+    text-align: center;
+}
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+
+.hidden {
+    opacity:0;
+}
+.console-container {
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size:2em;
+height:200px;
+width:600px;
+position:absolute;
+color:rgb(255, 255, 255);
+left: 34%;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f39cb8; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fc3677; 
+}
+
+strong {
+    color: #fc3677;
+}
+
+a {
+    color: #fc3677;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid rgb(255, 255, 255);
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    color: #ffffff;
+}
+th {
+    background-color: #fc3677;
+    color: #000000;
+    font-size: larger;
+}

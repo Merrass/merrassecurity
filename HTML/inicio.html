@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/inicio.css">
+    <title>Merras Security</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/simple-brush-script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+    <nav class="navMenu">
+        <a href="../index.html">Home</a>
+        <a href="">Blog</a>
+        <a href="../HTML/about.html">About</a>
+        <div class="dot"></div>
+    </nav>
+    </header>
+    <div class="column1" id="column1">
+        <div class="derecha">
+            <div class="logo-container">
+            <img src="../imagenes/logo1-modified.png" alt="M.S. Security Logo" width="150px" height="150px">
+            </div>
+            <hr class="trans--grow hr1">
+            <br>
+            <p class="a" style="color: #c9b3ba;">Merras</p>
+            <br>
+            <p class="a" style="color: #c9b3ba;">CyberSecurity Student</p>
+            <br>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/merras_/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/Merrass" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ciro-pe%C3%B1alver-57383b288/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="column2" style="background-color:#dd151500;">
+        <hr id="filling-hr">
+        <div class="derecha2">
+        <br>
+        <div class="medio">
+            <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
+        </div>
+        <br>
+        <br>
+        <br>    
+        <p class="a" style="font-size: 30px;">My Projects</p>
+
+        <div class="blog-preview" href="../HTML/upcoming.html">
+            <div class="medio">
+                <h1>Creating a Botnet with UFONet</h1>
+                <img src="../imagenes/ufonet.png" alt="Image UFONet" style="margin: 10px auto; display: block; width: 100%;">
+            </div>
+            <br>
+            <i class="fas fa-calendar-alt" style="color: #ffffff;"></i>
+            <span style="color: #ffffff;">  Jan 6, 2024</span>
+            <br>
+            <br>
+            <p>⚠️Educational purposes only!!⚠️ </p>
+            <p>Learn how to create a botnet using ufonet and how to make attacks with it.</p>
+        </div>
+
+        <br>
+
+        <div class="blog-preview" href="../HTML/upcoming.html">
+            <div class="medio">
+                <h1>Mitigate Attacks with HAProxy</h1>
+                <img src="../imagenes/haproxy.png" alt="Image Haproxy" style="margin: 10px auto; display: block; width: 100%;">
+            </div>
+            <br>
+            <i class="fas fa-calendar-alt" style="color: #ffffff;"></i>
+            <span style="color: #ffffff;">  May 17, 2024</span>
+            <br>
+            <br>
+            <p>Learn how to mitigate attacks using a High Availability Proxy like HAProxy.</p>
+        </div>
+
+        <br>
+
+        <div class="blog-preview" href="../HTML/encryption.html">
+            <div class="medio">
+                <h1>File Encryption Script with Python</h1>
+                <img src="../imagenes/encryption.jpg" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+            </div>
+            <br>
+            <i class="fas fa-calendar-alt" style="color: #ffffff;"></i>
+            <span style="color: #ffffff;">  May 27, 2024</span>
+            <br>
+            <br>
+            <p>Learn how to create a File Encryption script with Python on Linux.</p>
+        </div>
+
+        <br>
+
+        <div class="blog-preview" href="../HTML/webserver.html">
+            <div class="medio">
+                <h1>Create a Web Server with an ESP32</h1>
+                <img src="../imagenes/esp32.jpg" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+            </div>
+            <br>
+            <i class="fas fa-calendar-alt" style="color: #ffffff;"></i>
+            <span style="color: #ffffff;">  Jan 8, 2025</span>
+            <br>
+            <br>
+            <p>On this blog we will create a Web Server on an ESP32 using Arduino.</p>
+        </div>
+
+        <br>
+
+        <div class="blog-preview" href="../HTML/automatednetwork.html">
+            <div class="medio">
+                <h1>Configure Static or Public Network with Bash</h1>
+                <img src="../imagenes/automatednetwork.jpg" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+            </div>
+            <br>
+            <i class="fas fa-calendar-alt" style="color: #ffffff;"></i>
+            <span style="color: #ffffff;">  Feb 19, 2025</span>
+            <br>
+            <br>
+            <p>On this blog we will create an automated Networking Script to configurate a Public or Static network on Linux.</p>
+        </div>
+
+    </div>
+    </div>
+    <script>
+    const hrElement = document.getElementById("filling-hr");
+    function fillHr() {
+        let currentWidth = 0;
+        const intervalId = setInterval(() => {
+        currentWidth += 0.7;
+        hrElement.style.width = `${currentWidth}%`;
+        if (currentWidth >= 100) {
+            clearInterval(intervalId);
+        }
+        }, 10);
+    }
+    fillHr();
+
+    jQuery(document).ready(function($){
+            setTimeout(function(){
+                $('.trans--grow').addClass('grow');
+            }, 275);
+    });
+    $('.blog-preview').on('click', function() {
+                window.location.href = $(this).attr('href');
+    });
+    consoleText(['CyberSecurity', 'Bash Scripting', 'Ethical Hacking'], 'text', ['MediumVioletRed','Crimson','HotPink']);
+
+    function consoleText(words, id, colors) {
+    if (colors === undefined) colors = ['#fff'];
+    var visible = true;
+    var con = document.getElementById('console');
+    var letterCount = 1;
+    var x = 1;
+    var waiting = false;
+    var target = document.getElementById(id)
+    target.setAttribute('style', 'color:' + colors[0])
+    window.setInterval(function() {
+
+        if (letterCount === 0 && waiting === false) {
+        waiting = true;
+        target.innerHTML = words[0].substring(0, letterCount)
+        window.setTimeout(function() {
+            var usedColor = colors.shift();
+            colors.push(usedColor);
+            var usedWord = words.shift();
+            words.push(usedWord);
+            x = 1;
+            target.setAttribute('style', 'color:' + colors[0])
+            letterCount += x;
+            waiting = false;
+        }, 1000)
+        } else if (letterCount === words[0].length + 1 && waiting === false) {
+        waiting = true;
+        window.setTimeout(function() {
+            x = -1;
+            letterCount += x;
+            waiting = false;
+        }, 1000)
+        } else if (waiting === false) {
+        target.innerHTML = words[0].substring(0, letterCount)
+        letterCount += x;
+        }
+    }, 120)
+    window.setInterval(function() {
+        if (visible === true) {
+        con.className = 'console-underscore hidden'
+        visible = false;
+
+        } else {
+        con.className = 'console-underscore'
+
+        visible = true;
+        }
+    }, 400)
+    }
+    $(document).ready(function() {
+    var $column1 = $('#column1');
+    var offset = $column1.offset();
+    var topPadding = 80;
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > offset.top) {
+            $column1.stop().animate({
+                marginTop: $(window).scrollTop() - offset.top + topPadding
+            });
+        } else {
+            $column1.stop().animate({
+                marginTop: 0
+            });
+        }
+    });
+    });
+    </script>
+</body>
+</html>

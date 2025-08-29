@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About me</title>
+</head>
+<body>  
+    <div class="mail-container">
+        <div class="mail-wrapper">
+            <div class="mail-content">
+                <div class="profile-wrapper">
+                    <div class="home-button">
+                        <a href="../HTML/inicio.html"><i class="fa fa-arrow-left"></i></a>
+                    </div>
+                    <div class="profile-header profile-same">
+                        <div class="profile-avatar">
+                            <img src="../imagenes/logo1-modified.png" height="150px" width="150px">
+                        </div>
+                        <h1>Ciro Peñalver</h1>
+                        <h2>CyberSecurity Student</h2>
+                    </div>
+                    <div class="profile-bio profile-same">
+                        <p class="short-description">Hi! My name is Ciro and I'm currently studying and practicing CyberSecurity.</p>
+                        <div id="profile-bio-wrapper">
+                            <div id="show-more-icon" class="no-select">
+                                <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+                            </div>
+                            <div class="social-list">
+                                <ul>
+                                    <li class="bio-item paper-button"><a href="https://www.instagram.com/merras_/" title="Instagram" target="_blank"><i class="fa fa-fw fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li class="bio-item paper-button"><a href="https://github.com/Merrass" title="Github" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i></a></li>
+                                    <li class="bio-item paper-button"><a href="https://www.linkedin.com/in/ciro-pe%C3%B1alver-57383b288/" title="Linkedin" target="_blank"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li class="bio-item paper-button"><a href="mailto:ciropenyalver@gmail.com?Subject=Github Website" target="_top"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="bio-extra">
+                                <p>Hi! My name is Ciro aka Merras, and I'm a CyberSecurity Student.</p>
+                                <p>
+                                    I am deeply passionate about cybersecurity, dedicating my efforts to ensuring that our digital world remains safe and secure. 
+                                    Cybersecurity is crucial in today's digital age, and I am committed to making the online world safer for everyone.
+                                </p>
+                                
+                                <p>
+                                    Cybersecurity fascinates me because it is constantly evolving and presents new challenges every day. I enjoy staying up-to-date with 
+                                    the latest security trends and threats, and I find great satisfaction in helping others safeguard their information.
+                                </p>
+                                <p>If you want to get in touch, try <a target="_top">email</a> or 
+                                    <a target="_blank">Instagram!</a> :).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-ball-fill"></div>
+    <script>
+        var bioShowMore = document.getElementById("show-more-icon");
+        var bioMoreWrap = document.getElementById("profile-bio-wrapper");
+
+        if (typeof bioShowMore != "undefined" && bioShowMore != null) {
+            bioShowMore.addEventListener("click", function () {
+                bioMoreWrap.classList.toggle("show-more-info");
+            });
+        }
+    </script>
+</body>
+</html>

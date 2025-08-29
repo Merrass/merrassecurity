@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/content.css">
+    <title>Merras Security</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/simple-brush-script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+    <nav class="navMenu">
+        <a href="../index.html">Home</a>
+        <a href="../HTML/inicio.html">Blog</a>
+        <a href="../HTML/about.html">About</a>
+        <div class="dot"></div>
+    </nav>
+    </header>
+    <div class="column1" id="column1">
+        <div class="derecha">
+            <div class="logo-container">
+            <img src="../imagenes/logo1-modified.png" alt="M.S. Security Logo" width="150px" height="150px">
+            </div>
+            <hr class="trans--grow hr1">
+            <br>
+            <p class="a" style="color: #c9b3ba;">Merras</p>
+            <br>
+            <p class="a" style="color: #c9b3ba;">CyberSecurity Student</p>
+            <br>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/merras_/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/Merrass" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ciro-pe%C3%B1alver-57383b288/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="column2" style="background-color:#dd151500;">
+        <hr id="filling-hr">
+        <div class="derecha2">
+        <br>
+        <br>
+            <div class="blog-preview" href="#">
+                <div class="medio">
+                    <h1>Network Configuration in Bash</h1>
+                </div>
+                <br>    
+                <br>
+                <p> 
+                    On this little project i will show you how to create a simple script in bash to configure the network configuration in linux, 
+                    beacuse its easier and faster when you have the script than doing it manually.
+                </p>
+                <br>
+                <p>First of all i wanna do a quick explanation about this script, so with this script we can add a new static/private network, add a new dynamic/public 
+                    network and if we already have one of those two the script will recognize them on the configuration and it will ask if you want to do a new reconfiguration.
+                </p>
+                <br>
+                <br>
+                <p>
+                    Quick View of the Script:
+                    <br>
+                    <br>
+                    Configuring a Static Network with no existing configuration:
+                    <br>
+                    <img src="../imagenes/staticscript.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                    <br>
+                    <img src="../imagenes/staticscript2.png" alt="Image Encryption" style="margin: 10px auto; width: 70%;">
+                    <br>
+                    <br>
+                    <br>
+                    Configuring a Public Network with an already existing configuration:
+                    <br>
+                    <img src="../imagenes/publicscript.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                    <br>
+                    <img src="../imagenes/publicscript2.png" alt="Image Encryption" style="margin: 10px auto; width: 70%;">
+                    <br>
+                </p>
+                <br>
+                <br>
+                <p>To begin with the script we will create a Function to check if there is already an existing network configuration,</p>
+                <br>
+                <img src="../imagenes/functionnetwork.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                <br>
+                <p>This function is in charge of checking if there is an actual configuration done in the network, if so the script will ask the user if we want to remove the configuration 
+                    if the user accepts the script will automatically remove the network configuration with the "sed" command, This removes any line in "/etc/network/interfaces" that contains (enp0s3, enp0s8, address),
+                    the <strong>" \| "</strong> is the regex <strong>"OR"</strong> operator and <strong>" d "</strong> means "delete matching line".
+                    <br>
+                    <br>
+                    If the user refuses to remove any existing configuration the script will end.
+                </p>
+                <br>
+                <p>Now once the user has decided to delete the existing configuration, the script will ask the user to configure a public or private network, the first part of the script is configuring a static(private) network as we can 
+                    see in the image shown the script is asking the user the IP and Mask and the script will automatically configure the <strong>"/etc/network/interfaces"</strong> file. </p>
+                <img src="../imagenes/scriptstart.png" alt="Image Encryption" style="margin: 10px auto; width: 70%;">
+                <br>
+                <br>
+                <p>For the second part of the script, if the user selected to configure a public network the script will automatically configure by itself as shown in the picture below:</p>
+                <img src="../imagenes/scriptsecond.png" alt="Image Encryption" style="margin: 10px auto; width: 70%;">
+                <br>
+                <br>
+                <p>If the user selected an invalid choice the script will continue to ask to configure until the user decides to exit the script:</p>
+                <img src="../imagenes/scriptexit.png" alt="Image Encryption" style="margin: 10px auto; width: 70%;">
+                <br>
+                <br>
+                <br>
+                <p>This was all! i hope you liked my script!, you can get the full code here: <a href="../HTML/network_code.html">Code here</a></p>
+            </div>
+            <p></p>
+        </div>
+    </div>
+    <script>
+    const hrElement = document.getElementById("filling-hr");
+    function fillHr() {
+        let currentWidth = 0;
+        const intervalId = setInterval(() => {
+        currentWidth += 0.7;
+        hrElement.style.width = `${currentWidth}%`;
+        if (currentWidth >= 100) {
+            clearInterval(intervalId);
+        }
+        }, 10);
+    }
+    fillHr();
+
+    jQuery(document).ready(function($){
+            setTimeout(function(){
+                $('.trans--grow').addClass('grow');
+            }, 275);
+    });
+    $('.blog-preview').on('click', function() {
+                window.location.href = $(this).attr('href');
+    });
+    consoleText(['CyberSecurity', 'Bash Scripting', 'Ethical Hacking'], 'text', ['MediumVioletRed','Crimson','HotPink']);
+
+    function consoleText(words, id, colors) {
+    if (colors === undefined) colors = ['#fff'];
+    var visible = true;
+    var con = document.getElementById('console');
+    var letterCount = 1;
+    var x = 1;
+    var waiting = false;
+    var target = document.getElementById(id)
+    target.setAttribute('style', 'color:' + colors[0])
+    window.setInterval(function() {
+
+        if (letterCount === 0 && waiting === false) {
+        waiting = true;
+        target.innerHTML = words[0].substring(0, letterCount)
+        window.setTimeout(function() {
+            var usedColor = colors.shift();
+            colors.push(usedColor);
+            var usedWord = words.shift();
+            words.push(usedWord);
+            x = 1;
+            target.setAttribute('style', 'color:' + colors[0])
+            letterCount += x;
+            waiting = false;
+        }, 1000)
+        } else if (letterCount === words[0].length + 1 && waiting === false) {
+        waiting = true;
+        window.setTimeout(function() {
+            x = -1;
+            letterCount += x;
+            waiting = false;
+        }, 1000)
+        } else if (waiting === false) {
+        target.innerHTML = words[0].substring(0, letterCount)
+        letterCount += x;
+        }
+    }, 120)
+    window.setInterval(function() {
+        if (visible === true) {
+        con.className = 'console-underscore hidden'
+        visible = false;
+
+        } else {
+        con.className = 'console-underscore'
+
+        visible = true;
+        }
+    }, 400)
+    }
+    $(document).ready(function() {
+    var $column1 = $('#column1');
+    var offset = $column1.offset();
+    var topPadding = 80;
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > offset.top) {
+            $column1.stop().animate({
+                marginTop: $(window).scrollTop() - offset.top + topPadding
+            });
+        } else {
+            $column1.stop().animate({
+                marginTop: 0
+            });
+        }
+    });
+    });
+    </script>
+</body>
+</html>

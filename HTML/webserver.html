@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/content.css">
+    <title>Merras Security</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/simple-brush-script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+    <nav class="navMenu">
+        <a href="../index.html">Home</a>
+        <a href="../HTML/inicio.html">Blog</a>
+        <a href="../HTML/about.html">About</a>
+        <div class="dot"></div>
+    </nav>
+    </header>
+    <div class="column1" id="column1">
+        <div class="derecha">
+            <div class="logo-container">
+            <img src="../imagenes/logo1-modified.png" alt="M.S. Security Logo" width="150px" height="150px">
+            </div>
+            <hr class="trans--grow hr1">
+            <br>
+            <p class="a" style="color: #c9b3ba;">Merras</p>
+            <br>
+            <p class="a" style="color: #c9b3ba;">CyberSecurity Student</p>
+            <br>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/merras_/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/Merrass" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ciro-pe%C3%B1alver-57383b288/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="column2" style="background-color:#dd151500;">
+        <hr id="filling-hr">
+        <div class="derecha2">
+        <br>
+        <br>
+            <div class="blog-preview" href="#">
+                <div class="medio">
+                    <h1>ESP32 Web Server with Arduino IDE</h1>
+                </div>
+                <br>
+                <br>
+                <p>On this project we are going to create a Web Server using an ESP32!</p>
+                <br>
+                <p>First i would like to explain what's an ESP32 and how does it work,</p>
+                <br>
+                <h2>¿What is an ESP32?</h2>
+                <br>
+                <p>
+                The ESP32 is a microcontroller developed by Espressif Systems that combines powerful 
+                    processing capabilities with integrated Wi-Fi and Bluetooth features. It's commonly used in Internet of Things (IoT) projects due to its ability to 
+                    connect devices to wireless networks.
+                </p>
+                <br>
+                <h2>ESP32 How it works:</h2>
+                <br>
+                <p><strong>- Programming:</strong> The ESP32 is typically programmed using the Arduino IDE or Espressif's own ESP-IDF.</p>
+                <br>
+                <p><strong>- Connectivity:</strong> It can connect to Wi-Fi networks and communicate with other Bluetooth devices, enabling remote control and data transfer.</p>
+                <br>
+                <p><strong>- I/O Ports:</strong> It has numerous input/output ports for connecting sensors, actuators, and other peripherals.</p>
+                <br>
+                <p>In my case im using a <strong>TTGO-LoRa32 OLED</strong>, this board combines the ESP32 microcontroller with LoRa (Long Range) communication capabilities. So in short terms its 
+                    kinda the same but with this board we can also use the LoRa technology.</p>
+                <br>
+                <br>
+                <h2> ESP32 vs TTGO LoRa32</h2>
+                <br>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>ESP32</th>
+                        <th>TTGO LoRa32</th>
+                    </tr>
+                    <tr>
+                        <td>Microcontroller</td>
+                        <td>ESP32</td>
+                        <td>ESP32</td>
+                    </tr>
+                    <tr>
+                        <td>Wi-Fi</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Bluetooth</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>LoRa Communication</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>OLED Display</td>
+                        <td>No</td>
+                        <td>Some versions include an OLED display</td>
+                    </tr>
+                    <tr>
+                        <td>Power Management</td>
+                        <td>Basic (depends on the board)</td>
+                        <td>Advanced (battery support, charging)</td>
+                    </tr>
+                    <tr>
+                        <td>Applications</td>
+                        <td>General IoT, home automation</td>
+                        <td>Long-range IoT, remote sensing</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <p> Requirements Needed:</p>
+                <br>
+                <p>
+                    - <strong>Arduino IDE Software</strong>
+                    <br>
+                    - <strong>ESP32 Microcontroller</strong>
+                </p>
+                <br>
+                <br>
+                <p> Necessary libraries:</p>
+                <br>
+                <p>
+                    - <strong>#include Wire</strong>: Used for interfacing with various sensors and peripherals that communicate via the I2C protocol.
+                    <br>
+                    <br>
+                    - (OPTIONAL) <strong>#include Adafruit_GFX</strong>: Used for rendering shapes, text, and images on displays. It serves as a foundation for other display libraries.
+                    <br>
+                    <br>
+                    - (OPTIONAL) <strong>#include Adafruit_SSD1306</strong>: Used for displaying text, graphics, and images on small OLED screens, often in combination with the Adafruit GFX library.
+                    <br>
+                    <br>
+                    - <strong>#include WiFi</strong>: Used for establishing Wi-Fi connections, handling network settings, and facilitating communication over Wi-Fi.
+                    <br>
+                    <br>
+                    - <strong>#include ESPAsyncWebServer</strong>: Used for creating responsive and non-blocking web server applications on the ESP32, enabling dynamic web content and handling HTTP requests.
+                    <br>
+                    <br>
+                    - <strong>#include SPIFFS</strong>: Used for reading and writing files to the ESP32 flash memory, enabling storage and retrieval of data like configuration files, web pages, and other resources.
+                </p>
+                <br>
+                <br>
+                <p>
+                    To begin with the creation of the web server, the first thing we need to do is Launch <strong>Arduino IDE software</strong>, and connect our device to a computer or a power source.
+                    <br>
+                    <br>
+                    Once our device is powered on, a green light should turn ON, just like in the next image:
+                    <br>
+                    <img src="../imagenes/esp32.jpeg" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                    <br>
+                    Next thing we will do is know on which PORT our device has connected on our computer, to do this we will enter into the <strong>"Device Manager"</strong> of our computer, then on the "Ports (COM & LPT)" Section we 
+                    will see our device connected into a COM Port just like in the next image:
+                    <br>
+                    <img src="../imagenes/deviceman.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                    <br>
+                    <br>
+                    Now since we know on which port is connected the device in our case is <strong>'COM3'</strong>, we will open Arduino IDE and connect the device into the Software, to do this we will click on the upper right section that says <strong>"Select board and port ..."</strong>, 
+                    now we will select our device and the port that is connected to:
+                    <br>
+                    <img src="../imagenes/connected.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                    <br>
+                    <br>
+                    <h2>1. Creating the libraries and declaring required variables:</h2>
+                    <p>
+                    <br>
+                    Once we have connected our device into the Arduino IDE Software, we can start the coding process, to begin with, the first thing that we are going to do is declare our libraries:
+                    <br>
+                    <br>
+                    - <strong>Wire.h</strong> Essential library for the interaction with screens and another devices.
+                    <br>
+                    <br>
+                    - <strong>Adafruit_GFX.h</strong> This library provides functions to draw objects, text and images in digital screens.
+                    <br>
+                    <br>
+                    - <strong>Adafruit_SSD1306.h</strong> This library allows to show text, objects and images on those OLED screens.
+                    <br>
+                    <br>
+                    - <strong>WiFi.h</strong> Essential library to have WiFi access with our device.
+                    <br>
+                    <br>
+                    - <strong>ESPAsyncWebServer.h</strong> This library allows to create a web server with our device.
+                    <br>
+                    <br>
+                    - <strong>SPIFFS.h</strong> With this library we can allow our device to store data in the flash memory.
+                    <br>
+                    <br>
+                    Just like in the next image:
+                    <br>
+                    <img src="../imagenes/declared.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                    <br>
+                    In my case my device has a display, so im gonna define the dimensions of the OLED display:
+                    <br>
+                    <img src="../imagenes/oled.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                    <br>
+                    Next we are gonna create an object to define and control the oled display:
+                    <img src="../imagenes/definiciondisplay.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 70%;">
+                    <br>
+                    Now we are going to create an object (server), listeniung on port 80 (HTTP).
+                    <img src="../imagenes/deifiniciowebserver.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                    <br>
+                    Before we start coding we will need four variables to storage specific data for our device to have WiFi access and authenticate users.
+                    <img src="../imagenes/fourvariables.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 50%;">
+                    <br>
+                    - <strong>ssid</strong> Here we will store the SSID of the WiFi that we want to connect to.
+                    <br>
+                    <br>
+                    - <strong>password</strong> Here we will store the password of the WiFi aforesaid above.
+                    <br>
+                    <br>
+                    - <strong>username</strong> Here we will store the "username" for the required authentication
+                    <br>
+                    <br>
+                    - <strong>userpassword</strong> And finally, here we will store the "password" for the authentication along with the username.
+                    <br>
+                    <br>
+                    </p>
+                    <h2>2. Initial Configuration setup():</h2>
+                    <p>
+                    <br>
+                    Now we will start with the function "setup()", this function will only be executed only once when the device is powered on.
+                    <br>
+                    <strong>Wire.begin()</strong> Initializes the <a href="https://docs.arduino.cc/learn/communication/wire/">I2C (Inter-Integrated Circuit)</a> communitacion protocol.
+                    <br>
+                    <br>
+                    <strong>display.begin()</strong> This configures the OLED Display establishing it's parameters for the proper funcionality.
+                    <br>
+                    <br>
+                    <strong>SPIFFS.begin(true)</strong> Initializes the <a href="https://docs.arduino.cc/tutorials/nano-esp32/spiff/">SPIFFS file system</a> it allows the esp32 to store data on its flash memory.
+                    <br>
+                    <br>
+                    <strong>WiFi.begin()</strong> The device will try to connect to the WiFi network using the two variables that we declared a few steps back, the "while" loop will wait till it connects to the network.
+                    <br>
+                    <br>
+                    <strong>server.on()</strong> Here we are defining what the server has to do when someone visints certain addresses of our web server:
+                        <br>
+                        - The adress "/" is the main page.
+                        <br>
+                        - The Adress "/test" it could be the second page.
+                        <br>
+                        <br>
+                    In both pages it requires authentification for more security.
+                    <br>
+                    <br>
+                    <br>
+                    Here's how the code should look:
+                    <br>
+                    <img src="../imagenes/voidloop.png" alt="Image Encryption" style="margin: 10px auto; width: 40%;">
+                    <br>
+                    <img src="../imagenes/voidloop2o.png" alt="Image Encryption" style="margin: 10px auto; width: 40%;">
+                    <br>
+                    <img src="../imagenes/voidloop3o.png" alt="Image Encryption" style="margin: 10px auto; width: 40%;">
+                    <br>
+                    And this is how it should look when we access the website:
+                    <br>
+                    <img src="../imagenes/firstpage.png" alt="Image Encryption" style="margin: 10px auto; display: block; width: 100%;">
+                    <br>
+                    <br>
+                    <strong>server.begin()</strong> Initialices the web server.
+                    <br>
+                    <br>
+                    <br>
+                    <h2>3. Main Loop "loop()":</h2>
+                    <p>
+                    <br>
+                    This loop is repiting itself after "setup()" this loop was created to display text on the OLED Display:
+                    <br>
+                    <br>
+                    <strong>display.clearDispplay()</strong> With this we clear the display.
+                    <br>
+                    <br>
+                    <strong>display.setCursor(0, 0)</strong> Here we are "telling" the display to start showing text on the position "0, 0".
+                    <br>
+                    <br>
+                    <strong>display.print()</strong> With the print function we are printing text to the display.
+                    <br>
+                    <br>
+                    <strong>display.display()</strong> With this line we are refreshing the display to show the changes for every iteration in the loop.
+                    <img src="../imagenes/voidloopp.png" alt="Image Encryption" style="margin: 10px auto; width: 30%;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="../imagenes/displaytext.jpeg" alt="Image Encryption" style="margin: 10px auto; width: 30%;">
+                    </p>
+                    <br>
+                    <br>
+                    <h2>4. Authentification of the Web Server:</h2>
+                    <p>
+                    <br>
+                    <br>
+                    This part of the code is ensuring that only the people with the correct credentials can access the web site.
+                    <br>
+                    <br>
+                    <strong>request->authenticate()</strong> This is verifying if the user has proportioned the correct user and password.
+                    <br>
+                    <br>
+                    If the authentification fails, the server will emit a request for the browser to display a login dialog box.
+                    <br>
+                    <br>
+                    <br>
+                    This is how it should look:
+                    <br>
+                    <img src="../imagenes/authenticate.png" alt="Image Encryption" style="margin: 10px auto; width: 50%;">
+                    <br>
+                    <br>
+                    <p>This was all! I hope you liked my script! you can get the code here: <a href="../HTML/arduino_code.html">Code here</a></p>
+                    </p>
+                    
+                </p>
+            </div>
+    </div>
+    </div>
+    <script>
+        const hrElement = document.getElementById("filling-hr");
+        function fillHr() {
+            let currentWidth = 0;
+            const intervalId = setInterval(() => {
+            currentWidth += 0.7;
+            hrElement.style.width = `${currentWidth}%`;
+            if (currentWidth >= 100) {
+                clearInterval(intervalId);
+            }
+            }, 10);
+        }
+        fillHr();
+    
+        jQuery(document).ready(function($){
+                setTimeout(function(){
+                    $('.trans--grow').addClass('grow');
+                }, 275);
+        });
+        $('.blog-preview').on('click', function() {
+                    window.location.href = $(this).attr('href');
+        });
+        consoleText(['CyberSecurity', 'Bash Scripting', 'Ethical Hacking'], 'text', ['MediumVioletRed','Crimson','HotPink']);
+    
+        function consoleText(words, id, colors) {
+        if (colors === undefined) colors = ['#fff'];
+        var visible = true;
+        var con = document.getElementById('console');
+        var letterCount = 1;
+        var x = 1;
+        var waiting = false;
+        var target = document.getElementById(id)
+        target.setAttribute('style', 'color:' + colors[0])
+        window.setInterval(function() {
+    
+            if (letterCount === 0 && waiting === false) {
+            waiting = true;
+            target.innerHTML = words[0].substring(0, letterCount)
+            window.setTimeout(function() {
+                var usedColor = colors.shift();
+                colors.push(usedColor);
+                var usedWord = words.shift();
+                words.push(usedWord);
+                x = 1;
+                target.setAttribute('style', 'color:' + colors[0])
+                letterCount += x;
+                waiting = false;
+            }, 1000)
+            } else if (letterCount === words[0].length + 1 && waiting === false) {
+            waiting = true;
+            window.setTimeout(function() {
+                x = -1;
+                letterCount += x;
+                waiting = false;
+            }, 1000)
+            } else if (waiting === false) {
+            target.innerHTML = words[0].substring(0, letterCount)
+            letterCount += x;
+            }
+        }, 120)
+        window.setInterval(function() {
+            if (visible === true) {
+            con.className = 'console-underscore hidden'
+            visible = false;
+    
+            } else {
+            con.className = 'console-underscore'
+    
+            visible = true;
+            }
+        }, 400)
+        }
+        $(document).ready(function() {
+        var $column1 = $('#column1');
+        var offset = $column1.offset();
+        var topPadding = 80;
+    
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > offset.top) {
+                $column1.stop().animate({
+                    marginTop: $(window).scrollTop() - offset.top + topPadding
+                });
+            } else {
+                $column1.stop().animate({
+                    marginTop: 0
+                });
+            }
+        });
+        });
+        </script>
+</body>
+</html>
